@@ -76,7 +76,7 @@ export default function NavMenu() {
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Categories</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link to={{pathname: `/filter/${query}`}} onClick={()=>filterHandler('orange_juice')}>
               Dank memes
             </Nav.Link>
           </Nav>
