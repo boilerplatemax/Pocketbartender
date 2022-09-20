@@ -29,7 +29,17 @@ export default function Drinks(){
             .catch(error => {
                 setErrorState(true)
                })
-        },[])    
+        },[])
+        useEffect(()=>{
+            setErrorState(false)
+
+            fetch(`https://www.thecocktaildb.com/api/json/v1/1/${resource}`)
+            .then(response => response.json())
+            .then(json => setItems(json.drinks))
+            .catch(error => {
+                setErrorState(true)
+               })
+        },[urlParams])    
      
         return(
             <Container>
