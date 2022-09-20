@@ -14,7 +14,7 @@ import Instructions from './components/Instructions'
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename='/'>
       <NavMenu/>
         <Routes>
           <Route exact path="/" element={<Drinks/>}/>
