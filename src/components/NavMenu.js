@@ -39,9 +39,9 @@ export default function NavMenu() {
     window.location.assign(`/search/${search}`);
   }
   const returnHome = () =>{
-    if(window.location.pathname!='#/'){
+    if(window.location.pathname!='/'){
       window.localStorage.removeItem('DRINK_SEARCH')
-      window.location.href = '#/'
+      window.location.href = '/'
     }
 
   }
@@ -66,11 +66,11 @@ export default function NavMenu() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Popular" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/drink/178323">Passion Fruit Martini</NavDropdown.Item>
-              <NavDropdown.Item href="/drink/11387">Frozen Daiquiri</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+              <NavDropdown.Item to="/drink/178323">Passion Fruit Martini</NavDropdown.Item>
+              <NavDropdown.Item to="/drink/11387">Frozen Daiquiri</NavDropdown.Item>
+              <NavDropdown.Item to={`/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
+              <NavDropdown.Item to={`/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
+              <NavDropdown.Item to={`/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
