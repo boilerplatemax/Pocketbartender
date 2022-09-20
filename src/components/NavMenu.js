@@ -36,19 +36,19 @@ export default function NavMenu() {
   }
   const setSearchQuery = (search) =>{
     window.localStorage.setItem('DRINK_SEARCH',('search.php?s='+search))
-    window.location.assign(`/search/${search}`);
+    window.location.assign(`#/search/${search}`);
   }
   const returnHome = () =>{
-    if(window.location.pathname!='/'){
+    if(window.location.pathname!='/pocketbartender'){
       window.localStorage.removeItem('DRINK_SEARCH')
-      window.location.href = '/'
+      window.location.href = '/pocketbartender'
     }
 
   }
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='sticky-top'>
       <Container>
-        <Navbar.Brand className=' w-25' href="/" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
+        <Navbar.Brand className=' w-25' href="/pocketbartender" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
         <Nav className=' w-50'>
             <Form className="d-flex  w-100">
             <Form.Control
@@ -66,17 +66,17 @@ export default function NavMenu() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Popular" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/drink/178323">Passion Fruit Martini</NavDropdown.Item>
-              <NavDropdown.Item href="/drink/11387">Frozen Daiquiri</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
-              <NavDropdown.Item to={`/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
-              <NavDropdown.Item to={`/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+              <NavDropdown.Item href="#/drink/178323">Passion Fruit Martini</NavDropdown.Item>
+              <NavDropdown.Item href="#/drink/11387">Frozen Daiquiri</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
+              <NavDropdown.Item to={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
+              <NavDropdown.Item to={`#/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Categories</Nav.Link>
-            <Nav.Link eventKey={2} href="/drink/178323">
+            <Nav.Link eventKey={2} href="#/drink/178323">
               Dank memes
             </Nav.Link>
           </Nav>
