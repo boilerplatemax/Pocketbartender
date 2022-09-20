@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca9468e5.css",
-    "main.js": "/static/js/main.0cf3e6c1.js",
-    "static/js/787.6c79ce56.chunk.js": "/static/js/787.6c79ce56.chunk.js",
-    "static/media/cliparterror.png": "/static/media/cliparterror.b4a536ad5d6082dc8859.png",
-    "index.html": "/index.html",
-    "main.ca9468e5.css.map": "/static/css/main.ca9468e5.css.map",
-    "main.0cf3e6c1.js.map": "/static/js/main.0cf3e6c1.js.map",
-    "787.6c79ce56.chunk.js.map": "/static/js/787.6c79ce56.chunk.js.map"
+    "main.css": "/pocketbartender/static/css/main.ca9468e5.css",
+    "main.js": "/pocketbartender/static/js/main.49b3b267.js",
+    "static/js/787.6c79ce56.chunk.js": "/pocketbartender/static/js/787.6c79ce56.chunk.js",
+    "static/media/cliparterror.png": "/pocketbartender/static/media/cliparterror.b4a536ad5d6082dc8859.png",
+    "index.html": "/pocketbartender/index.html",
+    "main.ca9468e5.css.map": "/pocketbartender/static/css/main.ca9468e5.css.map",
+    "main.49b3b267.js.map": "/pocketbartender/static/js/main.49b3b267.js.map",
+    "787.6c79ce56.chunk.js.map": "/pocketbartender/static/js/787.6c79ce56.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca9468e5.css",
-    "static/js/main.0cf3e6c1.js"
+    "static/js/main.49b3b267.js"
   ]
 }
