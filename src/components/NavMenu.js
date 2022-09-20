@@ -39,9 +39,9 @@ export default function NavMenu() {
     window.location.assign(`/search/${search}`);
   }
   const returnHome = () =>{
-    if(window.location.pathname!='/'){
+    if(window.location.pathname!='#/'){
       window.localStorage.removeItem('DRINK_SEARCH')
-      window.location.href = '/'
+      window.location.href = '#/'
     }
 
   }
