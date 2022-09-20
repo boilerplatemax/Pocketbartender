@@ -17,7 +17,7 @@ export default function Drink(props){
             
         <Col className='card-box' onMouseEnter={hoverEnterHandler} onMouseLeave={hoverLeaveHandler}>
 
-            <Link to={{pathname: `/drink/${props.item.idDrink}`,}}
+            <Link to={{pathname: `/drink/${props.item.idDrink}`}}
                 className='link'>
                 <Card className={hover===true?'bg-light text-muted card-hover  border-0':'bg-white text-dark  border-0'}>
 
