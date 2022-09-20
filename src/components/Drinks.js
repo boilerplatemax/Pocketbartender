@@ -29,7 +29,7 @@ export default function Drinks(){
             .catch(error => {
                 setErrorState(true)
                })
-        })    
+        },[])    
      
         return(
             <Container>
