@@ -69,14 +69,14 @@ export default function NavMenu() {
               <NavDropdown.Item href="#/drink/178323">Passion Fruit Martini</NavDropdown.Item>
               <NavDropdown.Item href="#/drink/11387">Frozen Daiquiri</NavDropdown.Item>
               <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
-              <NavDropdown.Item to={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
-              <NavDropdown.Item to={`#/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Categories</Nav.Link>
-            <Nav.Link eventKey={2} href="#/drink/178323">
+            <Nav.Link eventKey={2} >
               Dank memes
             </Nav.Link>
           </Nav>
