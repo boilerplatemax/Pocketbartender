@@ -28,7 +28,7 @@ export default function HomePage(){
             
             <MinifiedDrinks ingredient='lemon'/>
             <MinifiedDrinks ingredient='coffee'/>
-            <Button className='round-button' href='/categories'>
+            <Button className='round-button' href='#/categories'>
                 View All Categories
             </Button>
             </Container>
