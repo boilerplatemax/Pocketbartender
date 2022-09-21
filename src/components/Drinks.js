@@ -31,6 +31,16 @@ export default function Drinks(){
                 setErrorState(true)
                })
         },[])
+        useEffect(()=>{
+            setErrorState(false)
+
+            fetch(`https://www.thecocktaildb.com/api/json/v1/1/${resource}`)
+            .then(response => response.json())
+            .then(json => setItems(json.drinks))
+            .catch(error => {
+                setErrorState(true)
+               })
+        },[urlParams]) 
     const formatResource=(string)=>{
         string=string.split('=')[1]
         string=string.replace('_', ' ')
@@ -53,9 +63,6 @@ export default function Drinks(){
                                 )
                             })}</Row></>://no results goes here
                             <NoResults name={formatResource(resource)}/>
-       
-                  
-                    
                    }
                    
             </Container>
