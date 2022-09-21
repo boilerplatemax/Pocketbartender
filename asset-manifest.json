@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/pocketbartender/static/css/main.ca9468e5.css",
-    "main.js": "/pocketbartender/static/js/main.ae173420.js",
+    "main.css": "/pocketbartender/static/css/main.cbc630f8.css",
+    "main.js": "/pocketbartender/static/js/main.89db56a1.js",
     "static/js/787.6c79ce56.chunk.js": "/pocketbartender/static/js/787.6c79ce56.chunk.js",
-    "static/media/cliparterror.png": "/pocketbartender/static/media/cliparterror.b4a536ad5d6082dc8859.png",
+    "static/media/aboutimg.png": "/pocketbartender/static/media/aboutimg.70ebf8e17aae80499054.png",
+    "static/media/lost.png": "/pocketbartender/static/media/lost.514736ab441b915e9990.png",
+    "static/media/homedrinkimg.png": "/pocketbartender/static/media/homedrinkimg.996c8b213560151a01f5.png",
     "index.html": "/pocketbartender/index.html",
-    "main.ca9468e5.css.map": "/pocketbartender/static/css/main.ca9468e5.css.map",
-    "main.ae173420.js.map": "/pocketbartender/static/js/main.ae173420.js.map",
+    "main.cbc630f8.css.map": "/pocketbartender/static/css/main.cbc630f8.css.map",
+    "main.89db56a1.js.map": "/pocketbartender/static/js/main.89db56a1.js.map",
     "787.6c79ce56.chunk.js.map": "/pocketbartender/static/js/787.6c79ce56.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca9468e5.css",
-    "static/js/main.ae173420.js"
+    "static/css/main.cbc630f8.css",
+    "static/js/main.89db56a1.js"
   ]
 }
