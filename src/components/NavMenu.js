@@ -36,12 +36,12 @@ export default function NavMenu() {
   }
   const setSearchQuery = (search) =>{
     window.localStorage.setItem('DRINK_SEARCH',('search.php?s='+search))
-    window.location.assign(`/search/${search}`);
+    window.location.assign(`#/search/${search}`);
   }
   const returnHome = () =>{
-    if(window.location.pathname!='/'){
+    if(window.location.pathname!='/pocketbartender'){
       window.localStorage.removeItem('DRINK_SEARCH')
-      window.location.href = '/'
+      window.location.href = '/pocketbartender'
     }
 
   }
@@ -67,25 +67,25 @@ export default function NavMenu() {
           <Nav className="me-auto">
             <NavDropdown title="Categories" id="collasible-nav-dropdown">
             <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Absinthe')}>Absinthe</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Rum')}>Rum</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Whiskey')}>Whiskey</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('Rum')}>Rum</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('Whiskey')}>Whiskey</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('pineapple_juice')}>Pineapple Juice</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('grenadine')}>Grenadine</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('pineapple_juice')}>Pineapple Juice</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('grenadine')}>Grenadine</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('mint')}>Mint</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('lemon')}>Lemon</NavDropdown.Item>
-              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('lime')}>Lime</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('mint')}>Mint</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('lemon')}>Lemon</NavDropdown.Item>
+              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('lime')}>Lime</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href='/categories'>View All</NavDropdown.Item>
+              <NavDropdown.Item href='#/categories'>View All</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/surprise">Surprise Me</Nav.Link>
+            <Nav.Link href="#/about">About</Nav.Link>
+            <Nav.Link href="#/surprise">Surprise Me</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -17,8 +17,9 @@ import About from './pages/About'
 function App() {
   return (
     <div className="App">
+      
+      <Router  basename='/'>
       <NavMenu/>
-      <Router>
         <Routes>
           <Route exact path="/" element={<HomePage/>}/>
           <Route path="/search/:urlParams" element={<Drinks/>}/>
