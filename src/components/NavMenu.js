@@ -36,21 +36,21 @@ export default function NavMenu() {
   }
   const setSearchQuery = (search) =>{
     window.localStorage.setItem('DRINK_SEARCH',('search.php?s='+search))
-    window.location.assign(`#/search/${search}`);
+    window.location.assign(`/search/${search}`);
   }
   const returnHome = () =>{
-    if(window.location.pathname!='/pocketbartender'){
+    if(window.location.pathname!='/'){
       window.localStorage.removeItem('DRINK_SEARCH')
-      window.location.href = '/pocketbartender'
+      window.location.href = '/'
     }
 
   }
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='sticky-top'>
+    <Navbar collapseOnSelect expand="lg" bg="white" variant="white" className='sticky-top navbar'>
       <Container>
-        <Navbar.Brand className=' w-25' href="/pocketbartender" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
+        <Navbar.Brand className=' w-25' href="/" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
         <Nav className=' w-50'>
-            <Form className="d-flex  w-100">
+            <Form className="d-flex  w-100" >
             <Form.Control
               type="search"
               placeholder="Search Drink..."
@@ -59,26 +59,33 @@ export default function NavMenu() {
               onChange={updateSearchHandler}
               onKeyPress={keyPressHandler}
             />
-            <Button variant="outline-success" onClick={searchHandler}>Search</Button>
+            <Button variant="outline-dark" onClick={searchHandler}>Search</Button>
           </Form>
           </Nav>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Popular" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#/drink/178323">Passion Fruit Martini</NavDropdown.Item>
-              <NavDropdown.Item href="#/drink/11387">Frozen Daiquiri</NavDropdown.Item>
-              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
-              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
-              <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+            <NavDropdown title="Categories" id="collasible-nav-dropdown">
+            <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Absinthe')}>Absinthe</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Rum')}>Rum</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Whiskey')}>Whiskey</NavDropdown.Item>
               <NavDropdown.Divider />
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('orange_juice')}>Orange Juice</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('pineapple_juice')}>Pineapple Juice</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('grenadine')}>Grenadine</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('mint')}>Mint</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('lemon')}>Lemon</NavDropdown.Item>
+              <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('lime')}>Lime</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href='/categories'>View All</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Categories</Nav.Link>
-            <Nav.Link eventKey={2} >
-              Dank memes
-            </Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/surprise">Surprise Me</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

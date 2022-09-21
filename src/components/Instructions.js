@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Card, Container, Col, Row , CloseButton} from 'react-bootstrap';
 import { useParams,useNavigate } from 'react-router-dom';
-import NoResults from './NoResults'
 
 const Instructions=()=>{
     const navigate = useNavigate();
@@ -22,7 +21,7 @@ return(
             items.map(item=>{
                 return(
                     <div className='instructions-card' key={1}>
-                        <Card>
+                        <Card style={{border:'none'}}>
                             <Row>
                             <CloseButton style={{position: 'absolute', right: '0', padding:'10px', backgroundColor:'white'}} onClick={()=>navigate(-1)}/>         
                                 <Col md='6'>

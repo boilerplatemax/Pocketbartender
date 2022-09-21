@@ -1,8 +1,21 @@
 html{
-    font-size: 14px;
+    font-size: 15px;
 }
-h4{font-size: 0.9rem;}
-
+body{
+  font-family:'Nunito'!important;
+}
+a:hover{
+  cursor: pointer;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+.lowercase{
+  text-transform: lowercase;
+}
+.navbar{
+  margin-bottom: 20px;
+}
 .search{
   margin-bottom: 0px;
   padding: 50px 0px;
@@ -12,6 +25,7 @@ margin-top: 25px;
 }
 .link{
   text-decoration: none;
+  color: #222222;
 }
 .link:hover *{
   object-fit:fill;
@@ -26,4 +40,75 @@ margin-top: 25px;
   height:100%;
   object-fit:cover;
   transition: filter .25s ease-in;
+}
+
+.home-banner{
+  min-height: 700px;
+  position: relative;
+}
+.orange-text{
+  color:#D9A400;
+}
+.title{
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.title h1{
+  font-size: 3.75rem;
+
+  
+}
+.title h2{
+  font-weight: lighter;
+  
+}
+.img-holder{
+  width: 100%;
+  position: relative;
+
+}
+.img-holder img{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+  top:0;
+  right:0;
+}
+.category-name{
+  color: white;
+  padding: 8px;
+  border-radius: 30px;
+
+}
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+.round-button{
+  padding: 10px!important;
+  font-size: 1.25rem!important;
+  border-radius: 30px!important;
+}
+.return-button{
+  position: absolute!important;
+  padding-right: 10px!important;
+  right:0!important;
+  top:0!important;
+  font-size: 1.25rem!important;
+  border-radius: 30px!important;
+  
+}
+#home-page,#about-page{
+  margin-bottom: 20px;
+}
+.noresults-text h1{
+  font-size: 5rem;
+}
+#about-img{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
