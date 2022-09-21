@@ -48,7 +48,7 @@ export default function NavMenu() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="white" variant="white" className='sticky-top navbar'>
       <Container>
-        <Navbar.Brand className=' w-25' href="/" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
+        <Navbar.Brand className=' w-25' href="#/" onClick={resetSearchHandler}>Pocket Bartender</Navbar.Brand>
         <Nav className=' w-50'>
             <Form className="d-flex  w-100" >
             <Form.Control
@@ -66,7 +66,7 @@ export default function NavMenu() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="Categories" id="collasible-nav-dropdown">
-            <NavDropdown.Item href={`/filter/${query}`} onClick={()=>filterHandler('Absinthe')}>Absinthe</NavDropdown.Item>
+            <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('Absinthe')}>Absinthe</NavDropdown.Item>
               <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('gin')}>Gin</NavDropdown.Item>
               <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('Rum')}>Rum</NavDropdown.Item>
               <NavDropdown.Item href={`#/filter/${query}`} onClick={()=>filterHandler('vodka')}>Vodka</NavDropdown.Item>
