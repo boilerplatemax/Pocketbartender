@@ -34,9 +34,9 @@ export default function About(){
                                 <li>
                                     Responsive user Interface
                                 </li>
-                            </ul>
-                            <h2>Developed By: Max Shapovalov</h2>
-                            <ul>
+                                </ul>
+                                <h2>Developed By Max Shapovalov</h2>
+                                <ul>
                                 <li>
                                     <a>Github</a>
                                 </li>
