@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Card, Container, Col, Row , CloseButton} from 'react-bootstrap';
+import { Card, Container, Col, Row , CloseButton, Spinner} from 'react-bootstrap';
 import { useParams,useNavigate } from 'react-router-dom';
 
 const Instructions=()=>{
@@ -54,7 +54,11 @@ return(
                     </div>    
                     )
                 }
-            ):null
+            ):<>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </>
         }
     </Container>
     )

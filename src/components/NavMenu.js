@@ -40,6 +40,7 @@ export default function NavMenu() {
   }
   const returnHome = () =>{
     if(window.location.pathname!='/pocketbartender'){
+      resetSearchHandler()
       window.localStorage.removeItem('DRINK_SEARCH')
       window.location.href = '/pocketbartender'
     }
