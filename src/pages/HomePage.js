@@ -2,6 +2,8 @@ import React from "react";
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import MinifiedDrinks from '../components/MinifiedDrinks';
 import homeImage from '../resources/images/homedrinkimg.png'
+import Category from '../components/Category';
+
 export default function HomePage(){
 
 //Home page
@@ -26,8 +28,12 @@ export default function HomePage(){
                     </Row>       
                 </div>
             
-            <MinifiedDrinks ingredient='lemon'/>
-            <MinifiedDrinks ingredient='coffee'/>
+                <Row xs='2' lg='4'>
+                    <Category ingredient='lemon_juice'/>
+                    <Category ingredient='pineapple_juice'/>
+                    <Category ingredient='red_wine'/>
+                    <Category ingredient='ginger'/>
+                </Row>
             <Button className='round-button' href='#/categories'>
                 View All Categories
             </Button>
