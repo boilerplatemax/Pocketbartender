@@ -1,8 +1,8 @@
 import React from "react";
 import {Container, Row, Col, Button} from 'react-bootstrap';
-import MinifiedDrinks from '../components/MinifiedDrinks';
 import homeImage from '../resources/images/homedrinkimg.png'
 import Category from '../components/Category';
+import ViewAll from '../components/ViewAll';
 
 export default function HomePage(){
 
@@ -13,30 +13,35 @@ export default function HomePage(){
             <Container>
                 <div className='home-banner'>
                     <Row>
-                        <Col>
+                        <Col lg={5}>
                             <div className="title capitalize">
                                 <h1>When life gives you lemons...</h1>
-                                <h2>make a cocktail with...</h2>
+                                <h2>make a cocktail!</h2>
                             </div>
                             
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={7}>
                             <div className="img-holder">
                                 <img src={homeImage}/>
                             </div>
                         </Col>
                     </Row>       
                 </div>
-            
-                <Row xs='2' lg='4'>
-                    <Category ingredient='lemon_juice'/>
-                    <Category ingredient='pineapple_juice'/>
-                    <Category ingredient='red_wine'/>
-                    <Category ingredient='ginger'/>
+                <Row>
+                    <Col>
+                        <h1>Categories</h1>
+                    </Col>
                 </Row>
-            <Button className='round-button' href='#/categories'>
-                View All Categories
-            </Button>
+                <Row xs='2' lg='4'>
+                    <Category ingredient='lemon_juice' name='Lemon Juice'/>
+                    <Category ingredient='pineapple_juice' name='Pineapple Juice'/>
+                    <Category ingredient='red_wine' name='Red Wine'/>
+                    <Category ingredient='ginger' name='Ginger'/>
+                    <Category ingredient='coffee' name='Coffee'/>
+                    <Category ingredient='kahlua' name='Kahlua'/>
+                    <Category ingredient='mint' name='Mint'/>
+                    <ViewAll/>
+                </Row>
             </Container>
             </div>
             

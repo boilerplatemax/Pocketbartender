@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 
 
 export default function Drink(props){
+        const {item}=props
+
         const [hover, setHover] = useState(false)
 
         const hoverEnterHandler = () =>{
@@ -13,25 +15,20 @@ export default function Drink(props){
             setHover(false)
         }
         return(
-            <>
-            
-        <Col className='card-box' onMouseEnter={hoverEnterHandler} onMouseLeave={hoverLeaveHandler} lg={3}>
+            <Col className='card-box' onMouseEnter={hoverEnterHandler} onMouseLeave={hoverLeaveHandler} lg={3}>
 
-            <Link to={{pathname: `/drink/${props.item.idDrink}`}}
-                className='link'>
-                <Card className={hover===true?'bg-light text-muted card-hover  border-0':'bg-white text-dark  border-0'}>
-
-                
-
-                <Card.Img src={props.item.strDrinkThumb} style={hover?{filter:'brightness(50%)'}:null} className='card-img'/>
-                <Card.Title style={{height:'50px',padding:'10px'}} title={`View Recipe for ${props.item.strDrink}`}>
-                    {props.item.strDrink}
-                </Card.Title>
-                </Card>
-            </Link>
-        </Col>
-        </>
-        
+                <Link to={{pathname: `/drink/${item.idDrink}`}}
+                    className='link'>
+                    <Card className={hover===true?'text-muted':'text-dark'}>
+                    <Card.Title title={`View Recipe for ${item.strDrink}`}>
+                        {item.strDrink}
+                    </Card.Title>
+                    <div className='card-img'>
+                        <Card.Img src={item.strDrinkThumb} className={hover?'half-brightness':null}/>
+                    </div>
+                    </Card>
+                </Link>
+            </Col>  
     )
 };
 

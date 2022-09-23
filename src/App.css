@@ -3,6 +3,7 @@ html{
 }
 body{
   font-family:'Nunito'!important;
+  background-color: white;
 }
 a:hover{
   cursor: pointer;
@@ -30,35 +31,32 @@ margin-top: 25px;
 .link:hover *{
   object-fit:fill;
 }
-
+.card-box *{
+  border-style: none!important;
+}
 .card-box{
   padding:10px;
-  border: none!important;
+}
+.card-img *{
+  height: 100%;
+  object-fit: cover;
+  transition: filter ease-in-out .25s;
+}
+.half-brightness{
+  filter:brightness(50%);
 }
 
-.card-img{
-  height:100%;
-  object-fit:cover;
-  transition: filter .25s ease-in;
-}
 
-.home-banner{
-  min-height: 700px;
-  position: relative;
-}
 .orange-text{
   color:#D9A400;
 }
-.title{
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.home-banner{
+  min-height: 400px;
+  position: relative;
 }
 .title h1{
-  font-size: 3.75rem;
-
-  
+  font-size: 5.75rem;
+  margin-top: 50px;
 }
 .title h2{
   font-weight: lighter;
@@ -72,10 +70,7 @@ margin-top: 25px;
 .img-holder img{
   width: 100%;
   height: auto;
-  position: absolute;
-  z-index: -1;
-  top:0;
-  right:0;
+  margin-top: -50px;
 }
 .category-name{
   color: white;
@@ -103,6 +98,9 @@ hr.rounded {
 }
 #home-page,#about-page{
   margin-bottom: 20px;
+}
+#about-page{
+  font-size: 1.25rem;
 }
 .noresults-text h1{
   font-size: 5rem;

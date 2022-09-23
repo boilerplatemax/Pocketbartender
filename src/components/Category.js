@@ -4,27 +4,21 @@ import {Link} from "react-router-dom";
 
 export default function Category(props){
 
+    const {ingredient, name, isSearchTerm}=props
 
-    const [errorState, setErrorState] = useState(false)
+    const resource= (isSearchTerm!=null?`search.php?s=${ingredient}`:`filter.php?i=${ingredient}`)
 
-    const resource = (`filter.php?i=${props.ingredient}`)
 
     const [items, setItems] = useState([''])
         useEffect(()=>{
-            setErrorState(false)
-
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/${resource}`)
             .then(response => response.json())
-            //only return 4 rinks
+            //only return first drink
             .then(json => setItems(json.drinks.slice(0, 1)))
             .catch(error => {
-                setErrorState(true)
+                console.log(error)
                })
         },[])
-        const formatResource=(string)=>{
-            string=string.replace('_', ' ')
-            return (string);
-        }
     const [hover, setHover] = useState(false)
 
     const hoverEnterHandler = () =>{
@@ -37,13 +31,12 @@ export default function Category(props){
         return(
                 <>
                     <Col className='card-box' onMouseEnter={hoverEnterHandler} onMouseLeave={hoverLeaveHandler}>
-                      
-                    <Link to={{pathname: `/filter/${props.ingredient}`}} className='link capitalize'><h5>{formatResource(props.ingredient)}</h5>
-                    
-
-                        <Card className={hover===true?'bg-light text-muted card-hover  border-0':'bg-white text-dark  border-0'}>
-
-                        <Card.Img src={items[0].strDrinkThumb} style={hover?{filter:'brightness(50%)'}:null} className='card-img'/>
+                    <Link to={{pathname: `/${isSearchTerm?'search':'filter'}/${ingredient}`}} className='link capitalize'>
+                        <Card className={hover===true?'bg-white text-muted border-0':'bg-white text-dark  '}>
+                        <Card.Title>{name}</Card.Title>
+                        <div className='card-img'>
+                            <Card.Img src={items[0].strDrinkThumb} className={hover?'half-brightness':null}/>
+                        </div>
                         </Card>
 
                     

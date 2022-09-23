@@ -3,7 +3,7 @@ import {Container, Row} from 'react-bootstrap';
 import Drink from './Drink'
 import NoResults from '../pages/NoResults'
 import { useParams, useNavigate, Link} from 'react-router-dom';
-import { propTypes } from "react-bootstrap/esm/Image";
+import ViewAll from './ViewAll';
 
 export default function Drinks(){
 
@@ -12,7 +12,7 @@ export default function Drinks(){
     const{urlParams}=useParams()
 
     const [errorState, setErrorState] = useState(false)
-
+    //does current link contain 'filter'
     const filter = (window.location.href.indexOf("filter") != -1)?true:false
     
     const resource = (!urlParams?'filter.php?a=non_alcoholic':
@@ -23,24 +23,14 @@ export default function Drinks(){
     const [items, setItems] = useState([''])
         useEffect(()=>{
             setErrorState(false)
-
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/${resource}`)
             .then(response => response.json())
             .then(json => setItems(json.drinks))
             .catch(error => {
                 setErrorState(true)
                })
-        },[])
-        useEffect(()=>{
-            setErrorState(false)
-
-            fetch(`https://www.thecocktaildb.com/api/json/v1/1/${resource}`)
-            .then(response => response.json())
-            .then(json => setItems(json.drinks))
-            .catch(error => {
-                setErrorState(true)
-               })
-        },[urlParams]) 
+        },[urlParams,'']) 
+    //function is pure because it will always return same output given any input
     const formatResource=(string)=>{
         string=string.split('=')[1]
         string=string.replace('_', ' ')
@@ -52,16 +42,16 @@ export default function Drinks(){
                     items&&errorState===false?<>
                     <Row>
                         <div className='position-relative'>
-                            <a onClick={()=>navigate(-1)} className='link capitalize return-button'><h4>Return</h4></a>  
-                            <h4>Results for: <strong><span className="category-name bg-primary">{formatResource(resource)}</span></strong></h4>
+                            <a onClick={()=>navigate(-1)} className='link return-button'><h4>Return</h4></a>  
+                            <h4 className='capitalize'>{items.length} Results for: <strong>'{formatResource(resource)}'</strong></h4>
                         </div>
                     </Row>
-                        <Row xs='2' md='2' lg='4' xxl='4'>{
+                        <Row xs='2' lg='4' >{
                         items.map(item=>{
                             return(
                                 <Drink key={item.idDrink} item={item}/> 
                                 )
-                            })}</Row></>://no results goes here
+                            })}<ViewAll/></Row></>://no results goes here
                             <NoResults name={formatResource(resource)}/>
                    }
                    
