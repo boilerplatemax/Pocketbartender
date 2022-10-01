@@ -1,111 +1,38 @@
-html{
-    font-size: 14px;
-}
-body{
-  font-family:'Nunito'!important;
-  background-color: white;
-}
-a:hover{
-  cursor: pointer;
-}
-.capitalize{
-  text-transform: capitalize;
-}
-.lowercase{
-  text-transform: lowercase;
-}
-.navbar{
-  margin-bottom: 20px;
-}
-.search{
-  margin-bottom: 0px;
-  padding: 50px 0px;
-}
-.instructions-card{
-margin-top: 25px;
-}
-.link{
-  text-decoration: none;
-  color: #222222;
-}
-.link:hover *{
-  object-fit:fill;
-}
-.card-box *{
-  border-style: none!important;
-}
-.card-box{
-  padding:10px;
-}
-.card-img *{
-  height: 100%;
-  object-fit: cover;
-  transition: filter ease-in-out .25s;
-}
-.half-brightness{
-  filter:brightness(50%);
+.App {
+  text-align: center;
 }
 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
-.orange-text{
-  color:#D9A400;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
-.home-banner{
-  min-height: 400px;
-  position: relative;
-}
-.title h1{
-  font-size: 5.75rem;
-  margin-top: 50px;
-}
-.title h2{
-  font-weight: lighter;
-}
-.img-holder{
-  width: 100%;
-  position: relative;
 
-}
-.img-holder img{
-  width: 100%;
-  height: auto;
-  margin-top: -50px;
-}
-.category-name{
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  padding: 8px;
-  border-radius: 30px;
+}
 
+.App-link {
+  color: #61dafb;
 }
-hr.rounded {
-  border-top: 8px solid #bbb;
-  border-radius: 5px;
-}
-.round-button{
-  padding: 10px!important;
-  font-size: 1.25rem!important;
-  border-radius: 30px!important;
-}
-.return-button{
-  position: absolute!important;
-  padding-right: 10px!important;
-  right:0!important;
-  top:0!important;
-  font-size: 1.25rem!important;
-  border-radius: 30px!important;
-  
-}
-#home-page,#about-page{
-  margin-bottom: 20px;
-}
-#about-page{
-  font-size: 1.25rem;
-}
-.noresults-text h1{
-  font-size: 5rem;
-}
-#about-img{
-  width: 100%;
-  max-width: 500px;
-  height: auto;
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
