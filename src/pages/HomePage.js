@@ -1,47 +1,39 @@
 import React from "react";
-import {Container, Row, Col, Button} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import homeImage from '../resources/images/homedrinkimg.png'
-import Category from '../components/Category';
-import ViewAll from '../components/ViewAll';
+import { Animated } from "react-animated-css";
 
-export default function HomePage(){
+export default function HomePage({resetSearch}){
 
 //Home page
 
         return(
             <div id='home-page'>
             <Container>
-                <div className='home-banner'>
+                <div className='home-page__banner'>
                     <Row>
                         <Col lg={5}>
-                            <div className="title capitalize">
+                        <Animated animationIn="fadeIn" isVisible={true} animationInDuration={1000}>
+                            <div className="home-page__title capitalize">
                                 <h1>When life gives you lemons...</h1>
-                                <h2>make a cocktail!</h2>
                             </div>
-                            
+                            <div className="home-page__title-lighter capitalize">
+                                <h2>Make a Cocktail!</h2>
+                            </div>
+                            <a href='#/search'><button className='btn btn--primary btn--large' onClick={()=>resetSearch()}>Explore Drinks</button></a>
+                        </Animated>
                         </Col>
                         <Col lg={7}>
-                            <div className="img-holder">
+                        <Animated animationIn="bounceInDown" isVisible={true} animationInDuration={1000} animationInDelay={200}>
+                            <div className="home-page__img-holder">
                                 <img src={homeImage}/>
                             </div>
+                            
+                        </Animated>
+                        <p className="float-end text-muted">Developed by Max Shapovalov</p>
                         </Col>
                     </Row>       
                 </div>
-                <Row>
-                    <Col>
-                        <h1>Categories</h1>
-                    </Col>
-                </Row>
-                <Row xs='2' lg='4'>
-                    <Category ingredient='lemon_juice' name='Lemon Juice'/>
-                    <Category ingredient='pineapple_juice' name='Pineapple Juice'/>
-                    <Category ingredient='red_wine' name='Red Wine'/>
-                    <Category ingredient='ginger' name='Ginger'/>
-                    <Category ingredient='coffee' name='Coffee'/>
-                    <Category ingredient='kahlua' name='Kahlua'/>
-                    <Category ingredient='mint' name='Mint'/>
-                    <ViewAll/>
-                </Row>
             </Container>
             </div>
             
